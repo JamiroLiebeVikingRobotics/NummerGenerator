@@ -14,13 +14,15 @@ namespace NummerGenerator
             Boolean status = false;
 
             Console.WriteLine("Guess the number between 0-100");
-
+            //Skapar en While loop tills användaren gissar rätt
             while (status == false)
             {
                 Console.WriteLine("Please enter a number");
 
                 string input = Console.ReadLine();
-                int guess = int.Parse(input);
+                //Ändrar stringen till en int om möjligt
+                int.TryParse(input, out int guess);
+
 
                 //Ändrar "Status" om gissningen är rätt för att avsluta Loopen
                 if (guess == num)
@@ -28,10 +30,16 @@ namespace NummerGenerator
                     status = true;
                     Console.WriteLine("Congrats you won!! ");
                 }
-                 
-                
-        
-
+                //Ger ledtrådar till användaren
+                else
+                {
+                    if (guess < num)
+                    {
+                        Console.WriteLine("Your guess is too low!");
+                    }
+                    else
+                        Console.WriteLine("Your guesss is too high");
+                }
             }
 
         }

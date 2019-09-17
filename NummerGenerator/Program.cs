@@ -6,7 +6,6 @@ namespace NummerGenerator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             //Genererar och sparar ett nummer mellan 0-100
             Random rnd = new Random();
             int num = rnd.Next(100);
